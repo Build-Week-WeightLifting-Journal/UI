@@ -17,13 +17,22 @@ header {
 
   nav {
     width: 30%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
 
     a {
+      height: 100%;
+      display: flex;
+      align-items: center;
       font-size: 19px;
       color: @white;
       text-decoration: none;
+
+      &.current {
+        border-top: 4px solid @primary; // Workaround to not misalign text
+        border-bottom: 4px solid white;
+      }
     }
   }
 }
