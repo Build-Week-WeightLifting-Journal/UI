@@ -1,6 +1,4 @@
 header {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 60px;
   padding: 0 30px;
@@ -16,13 +14,14 @@ header {
   }
 
   nav {
-    width: 30%;
     height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     a {
       height: 100%;
+      padding: 0 5px;
       display: flex;
       align-items: center;
       font-size: 19px;
@@ -34,5 +33,15 @@ header {
         border-bottom: 4px solid white;
       }
     }
+  }
+
+  @media @table {
+    height: initial;
+    flex-direction: column;
+  }
+
+  @media @phone {
+    height: initial;
+    flex-direction: column;
   }
 }
