@@ -1,8 +1,6 @@
 * {
   box-sizing: border-box;
   font-family: Roboto;
-  width: 100%;
-  height: auto;
 }
 html {
   font-size: 62.5%;
@@ -15,16 +13,14 @@ h2 {
 }
 h4 {
   font-size: 2.5rem;
-  padding-bottom: 10px;
 }
 p {
-  line-height: 1.5;
   font-size: 1.6rem;
-  padding-bottom: 10px;
+}
+.hidden {
+  opacity: 0;
 }
 header {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 60px;
   padding: 0 30px;
@@ -39,13 +35,14 @@ header p {
   color: #fafafa;
 }
 header nav {
-  width: 30%;
   height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 header nav a {
   height: 100%;
+  padding: 0 5px;
   display: flex;
   align-items: center;
   font-size: 19px;
@@ -56,13 +53,25 @@ header nav a.current {
   border-top: 4px solid #6200ee;
   border-bottom: 4px solid white;
 }
+@media (max-width: 768px) {
+  header {
+    height: initial;
+    flex-direction: column;
+  }
+}
+@media (max-width: 425px) {
+  header {
+    height: initial;
+    flex-direction: column;
+  }
+}
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   height: 88px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: #2d2d2d;
 }
@@ -73,78 +82,95 @@ footer p {
 footer p span {
   color: #03dac5;
 }
+@media (max-width: 425px) {
+  footer {
+    flex-direction: column;
+  }
+  footer .hidden {
+    display: none;
+  }
+}
 .top-content {
   display: flex;
-  flex-direction: wrap;
+  flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 2%;
+  justify-content: space-around;
+  margin: 5px;
 }
-@media ( max-width: 500px) {
+@media (max-width: 425px) {
   .top-content {
     display: flex;
     flex-direction: column;
-    margin-top: 8%;
+    align-items: center;
   }
 }
-.top-content .content-section1 {
+.top-content section {
+  background-color: #fafafa;
+  width: 45%;
+  margin: 5px;
+  padding: 5px;
+  font-size: 100px;
+  border: 0.5rem double #3700B3;
+  border-radius: 3rem;
+}
+.top-content section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-content section img {
+  width: 100%;
+  height: 54vh;
+}
+@media (max-width: 425px) {
+  .top-content section img {
+    height: 20vh;
+  }
+}
+@media (max-width: 425px) {
+  .top-content section {
+    width: 98%;
+  }
+}
+.container.about section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.container.about section > div {
+  width: 40%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: #fafafa;
-  width: 45%;
+  color: #2d2d2d;
   border: 0.5rem double #3700B3;
-  font-size: 100px;
-  margin-top: 5%;
-  margin-left: 1%;
   border-radius: 3rem;
 }
-@media ( max-width: 500px) {
-  .top-content .content-section1 {
-    width: 98%;
-    height: 39vh;
-    margin-left: 1%;
-    margin-bottom: -2%;
-  }
+.container.about section > div h2 {
+  margin: 0;
 }
-.top-content .content-section1 .content-text1 {
-  text-align: center;
-  font-family: Arial;
-}
-.top-content .content-section1 .content-picture1 {
-  width: 100;
-}
-.top-content .content-section1 .content-picture1 img {
-  height: 54vh;
-}
-@media ( max-width: 500px) {
-  .top-content .content-section1 .content-picture1 img {
-    height: 20vh;
-  }
-}
-.top-content .content-section2 {
-  background-color: #fafafa;
-  width: 45%;
-  border: 0.5rem double #3700B3;
-  font-size: 100px;
-  margin-top: 5%;
-  border-radius: 3rem;
-}
-@media ( max-width: 500px) {
-  .top-content .content-section2 {
-    width: 98%;
-    height: 39vh;
-    margin-left: 1%;
-  }
-}
-.top-content .content-section2 .content-text2 {
-  text-align: center;
-}
-.top-content .content-section2 .content-picture2 {
+.container.about section > div div {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
-.top-content .content-section2 .content-picture2 img {
-  height: 54vh;
+.container.about section > div div img {
+  margin: 10px;
+  border-radius: 50%;
 }
-@media ( max-width: 500px) {
-  .top-content .content-section2 .content-picture2 img {
-    height: 20vh;
+@media (max-width: 425px) {
+  .container.about section > div div {
+    flex-direction: column;
+    justify-content: center;
   }
 }
+@media (max-width: 425px) {
+  .container.about section > div {
+    width: 98%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
